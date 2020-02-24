@@ -28,6 +28,9 @@ public class SnakeGame {
                         if (game[r + 1][c] == true) {
                             neigh++;
                         }
+                        if (game[r][c + 1] == true) {
+                            neigh++;
+                        }
                     }
                     if (r - 1 >= 0 && c - 1 >= 0) {
                         if (game[r - 1][c] == true) {
