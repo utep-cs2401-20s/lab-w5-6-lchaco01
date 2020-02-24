@@ -18,23 +18,32 @@ public class SnakeGame {
     public int[] findTailExhaustive(int x, int y) {
         int cells = 0;
         int length = 0;
+        int neigh = 0;
         int[] result = new int [3];
-        for (int i = 0; i < game.length; i++) {
-            for (int j = 0; j < game[i].length; j++) {
+        for (int r = 0; r < game.length; r++) {
+            for (int c = 0; c < game[r].length; c++) {
                 int count;
-                if (game[i][j]) {
-                    length++;
-                    if () {
+                if (game[r][c]) {
+                    if (r + 1 < game.length  && c + 1 < game[r].length) {
+                        if (game[r + 1][c] == true) {
+                            neigh++;
+                        }
+                    }
+                    if (r - 1 >= 0 && c - 1 >= 0) {
+                        if (game[r - 1][c] == true) {
 
+                        }
                     }
                 }
+
                 cells++;
             }
         }
+        //length++;
         return result;
     }
 
-    public int[] fineTailRecursive(int x, int y) {
+    public int[] findTailRecursive(int x, int y) {
         int cells = 0;
         int length = 0;
         int[] result = new int [3];
