@@ -15,7 +15,9 @@ public class SnakeGame {
         game = g;
     }
 
+
     public int[] findTailExhaustive(int x, int y) {
+        resetCounters();
         int cells = 0;
         int length = 0;
         int neigh = 0;
@@ -24,7 +26,7 @@ public class SnakeGame {
             for (int c = 0; c < game[r].length; c++) {
                 int count;
                 if (game[r][c]) {
-                    if (r + 1 < game.length  && c + 1 < game[r].length) {
+                    if (r + 1 <= (game.length - 1) {
                         if (game[r + 1][c] == true) {
                             neigh++;
                         }
@@ -32,13 +34,25 @@ public class SnakeGame {
                             neigh++;
                         }
                     }
-                    if (r - 1 >= 0 && c - 1 >= 0) {
+                    if (r - 1 >= 0) {
                         if (game[r - 1][c] == true) {
                             neigh++;
                         }
                         if (game[r][c - 1] == true) {
                             neigh++;
                         }
+                    }
+                    if (c + 1 <= (game[r].length -1)) {
+
+                    }
+                    if (c - 1 >= 0) {
+
+                    }
+                    if (r == game.length - 1) {
+
+                    }
+                    if (c == game[r].length - 1) {
+
                     }
                 }
 
@@ -50,18 +64,29 @@ public class SnakeGame {
     }
 
     public int[] findTailRecursive(int x, int y) {
-        int cells = 0;
-        int length = 0;
+
         int[] result = new int [3];
 
         return result;
     }
 
     private int[] findTailRecursive(int[] currentPosition, int[] previousPosition) {
+        resetCounters();
 
     }
 
-    private void resetChecks() {
+
+    public static int getExhaustiveChecks() {
+        return exhaustiveChecks;
+    }
+
+    public static int getRecursiveChecks() {
+        return recursiveChecks;
+    }
+
+    private void resetCounters() {
+        exhaustiveChecks = 0;
+        recursiveChecks = 0;
 
     }
 }
